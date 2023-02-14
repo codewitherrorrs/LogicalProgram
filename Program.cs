@@ -6,24 +6,27 @@ namespace LogicalProgram
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Press Enter the Stop Watch Time : ");
-            int second = Convert.ToInt32(Console.ReadLine());
-           
-            Stopwatch stopwatch = new Stopwatch();
-            Console.WriteLine("Stop Watch is Started ");
-            stopwatch.Start();
-
-            // ... This takes 10 seconds to finish.
-            for (int i = 0; i < second; i++)
+            Console.WriteLine("Enter A value for FabSeries :-");
+            int fabS = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine(fabS);
+            int num1 = 0;
+            int num2 = 1;
+            int nextNum;
+            if (fabS < 2)
             {
-                System.Threading.Thread.Sleep(100);
+                Console.WriteLine("Enter a value greater than 2 if u want to see Fabseries :");
             }
-
-            // Stop.
-            stopwatch.Stop();
-
-            // Write hours, minutes and seconds.
-            Console.WriteLine("Time elapsed: {0:hh\\:mm\\:ss}", stopwatch.Elapsed); 
+            else
+            {
+                Console.Write(num1 + " " + num2 + " ");
+                for (int i = 2; i < fabS; i++)
+                {
+                    nextNum = num1 + num2;
+                    Console.Write(nextNum + " ");
+                    num1 = num2;
+                    num2 = nextNum;
+                }
+            }    
         }
     }
 }
